@@ -7,11 +7,27 @@
     "icon": "./assets/images/icon.png",
     "scheme": "rumbamap",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Necesitamos tu ubicación para mostrarte eventos cercanos en el mapa."
+      },
+      "config": {
+        "googleMapsApiKey": "AIzaSyC7P_FPI8dCiv0dHbsz2Xa5ku4VwLstiHM"
+      },
+      "bundleIdentifier": "com.anonymous.rumbamap"
     },
     "android": {
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyC7P_FPI8dCiv0dHbsz2Xa5ku4VwLstiHM"
+        }
+      },
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -19,7 +35,8 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.rumbamap"
     },
     "web": {
       "output": "static",
